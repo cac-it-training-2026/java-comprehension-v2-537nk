@@ -1,6 +1,8 @@
 package q01_basic.question06;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * 標準入力を制御するクラス
@@ -15,7 +17,13 @@ class ConsoleReader {
 	 */
 	public String inputString() throws IOException {
 		//TODO ここから実装する
-
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			String str = reader.readLine();
+			return str;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return "";
 	}
 
@@ -28,7 +36,15 @@ class ConsoleReader {
 	 */
 	public int inputNumber() throws IOException, NumberFormatException {
 		//TODO ここから実装する
-
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			int i = Integer.parseInt(reader.readLine());
+			return i;
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
 		return 0;
 
 	}
